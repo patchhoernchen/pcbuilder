@@ -37,19 +37,21 @@ class Build():
             ( name, amount, price, link)
         )
 
+    def add_part(self, type_, item, amount):
+        name, price, link = self.find_part(type_, item)
+        self.update(name, price, link, amount)
+
     def assemble(self):
         for type_, item_ in self.build.items():
             if isinstance(item_, str):
                 item = item_
                 amount = 1
-                name, price, link = self.find_part(type_, item)
-                self.update(name, price, link, amount)
+                self.add_part(type_, item, amount)
             elif isinstance(item_, list):
                 for item__ in item_:
                     item = list(item__.keys())[0]
                     amount = list(item__.values())[0]
-                    name, price, link = self.find_part(type_, item)
-                    self.update(name, price, link, amount)
+                    self.add_part(type_, item, amount)
 
     def __str__(self):
         header = f"{self.name}: {round(self.price, 2)} Euro"
