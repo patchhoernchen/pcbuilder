@@ -1,0 +1,84 @@
+CPU:
+  - R7:
+      name: AMD Ryzen 7 7700X
+      price: 309.91
+      link: https://geizhals.de/amd-ryzen-7-7700x-100-000000591-a2819616.html
+  - R8:
+      name: AMD Ryzen 8 7800X3D
+      price: 393.99
+      link: https://geizhals.de/amd-ryzen-7-7800x3d-100-100000910wof-a2872148.html
+  - R9:
+      name: AMD Ryzen 9 7900X
+      price: 438.66
+      link:  https://geizhals.de/amd-ryzen-9-7900x-100-100000589wof-a2801226.html
+
+GPU:
+  - RX7800XT:
+      name: SAPPHIRE Radeon RX 7800XT 16GB
+      price: 547.99
+      link: https://geizhals.de/sapphire-radeon-rx-7800-xt-v139043.html
+  - RX7900XTX:
+      name: Sapphire Radeon RX 7900 XTX
+      price: 1021.79
+      link: https://geizhals.de/sapphire-pulse-radeon-rx-7900-xtx-11322-02-20g-a2864040.html
+
+MB:
+  - ASUS_TFU:
+      name: ASUS TUF GAMING X670E-PLUS WIFI
+      price: 298.59
+      link: https://geizhals.de/asus-tuf-gaming-x670e-plus-wifi-90mb1bk0-m0eay0-a2819592.html
+  - MSI_MAG:
+      name: MSI MAG B650 Tomahawk WIFI
+      price: 207.00
+      link: https://geizhals.de/msi-mag-b650-tomahawk-wifi-a2824300.html
+
+MEM:
+  - CRUCIAL32:
+      Name: Crucial DIMM Kit 32GB, DDR5-4800, CL40-39-39, on-die ECC
+      price: 92.00
+      link: https://geizhals.de/crucial-dimm-ddr5-v88885.html
+  - CRUCIAL16:
+      name: Crucial DIMM 16GB, DDR5-4800, CL40-39-39, on-die ECC
+      price: 44.99
+      link: https://geizhals.de/crucial-ddr5-dimm-16gb-ct16g48c40u5-a2627503.html
+
+SSD:
+  - TG1TB:
+      name: TEAMGROUP MP33 SSD 1TB M.2
+      price: 47.43
+      link: https://geizhals.de/?fs=TEAMGROUP+MP33+SSD+1TB+M.2&hloc=at&hloc=de
+
+PSU:
+  - FORTON850W:
+      name: FSP Fortron/Source Hydro K PRO 850W
+      price: 76.90
+      link: https://geizhals.de/fsp-hydro-k-pro-850w-atx-2-52-a2614764.html
+  - BQ850W:
+      link: https://www.mindfactory.de/product_info.php/850-Watt-be-quiet--System-Power-10-Non-Modular-80--Gold_1470342.html
+      price: 97.32
+      name: 850 Watt be quiet! System Power 10 Non-Modular 80+ Gold
+
+COOLING:
+  - ASUS_ROG:
+      name: ASUS ROG Strix LC 360 RGB
+      price: 172
+      link: https://geizhals.de/asus-rog-strix-lc-360-rgb-white-edition-90rc0072-m0uay0-a2210909.html
+  - BQ:
+      name: be quiet! Dark Rock 4
+      price: 80
+      link: https://geizhals.de/be-quiet-dark-rock-4-v50714.html
+  - NC:
+      link: https://geizhals.de/noctua-nh-d15-v44960.html
+      price: 117
+      name: Noctua NH-D15
+
+CASE:
+  - KOLINK_OBS:
+      name: KOLINK Observatory Duo ARGB Midi-Tower
+      price: 72.61
+      link: https://geizhals.de/kolink-observatory-duo-argb-schwarz-a2916500.html
+  - FD NB:
+      link: https://geizhals.de/fractal-design-north-v119325.html
+      name: Fractal Design North Black
+      price: 121.89
+

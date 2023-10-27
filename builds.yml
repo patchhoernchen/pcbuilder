@@ -1,0 +1,72 @@
+#BUDGET:
+#  CPU: 
+#  GPU: 
+#  MB: 
+#  MEM:
+#    - : 2
+#  SSD:
+#    - : 2
+#  PSU: 
+#  COOLING: 
+#  CASE: 
+
+ORIG:
+  CPU: R7
+  GPU: RX7800XT
+  MB: ASUS_TFU
+  MEM:
+    - CRUCIAL16: 2
+  SSD:
+    - TG1TB: 2
+  PSU: FORTON850W
+  COOLING: ASUS_ROG
+  CASE: KOLINK_OBS
+
+BUDGET:
+  CPU: R7
+  GPU: RX7800XT
+  MB: MSI_MAG
+  MEM:
+    - CRUCIAL16: 2
+  SSD:
+    - TG1TB: 1
+  PSU: FORTON850W
+  COOLING: BQ
+  CASE: KOLINK_OBS
+
+HE:
+  CPU: R8
+  GPU: RX7900XTX
+  MB: ASUS_TFU
+  MEM:
+    - CRUCIAL16: 4
+  SSD:
+    - TG1TB: 2
+  PSU: BQ850W
+  COOLING: ASUS_ROG
+  CASE: FD NB
+
+FAV_B:
+  CPU: R8
+  GPU: RX7800XT
+  MB: MSI_MAG
+  MEM:
+    - CRUCIAL16: 2
+  SSD:
+    - TG1TB: 2
+  PSU: BQ850W
+  COOLING: ASUS_ROG
+  CASE: KOLINK_OBS
+
+FAV_A:
+  CPU: R8
+  GPU: RX7800XT
+  MB: MSI_MAG
+  MEM:
+    - CRUCIAL16: 2
+  SSD:
+    - TG1TB: 2
+  PSU: BQ850W
+  COOLING: BQ
+  CASE: FD NB
+
