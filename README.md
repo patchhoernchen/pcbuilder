@@ -25,8 +25,8 @@ options:
                         file containing builds
   -C componentsfile, --componentsfile componentsfile
                         file containing parts
-  -l, --links           open link for build
-  -L, --show-links      show link only for build
+  -l, --links           open links for build
+  -L, --show-links      show links for build
   -w webbrowser, --webbrowser webbrowser
                         open link for build
 
