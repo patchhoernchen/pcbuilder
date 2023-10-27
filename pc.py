@@ -55,45 +55,85 @@ class Build():
 
     def __str__(self):
         header = f"{self.name}: {round(self.price, 2)} Euro"
-        partlist = '\n'.join([ f"{amount}x {name} ({price}€ pp) - {link}" for name, amount, price, link in self.partlist ])
+        partlist = '\n'.join([
+            f"{amount}x {name} ({price}€ pp) - {link}"
+            for name, amount, price, link
+            in self.partlist
+        ])
         return f"{header}\n{partlist}"
 
 
-def main():
-
+def get_args():
     parser = argparse.ArgumentParser(
         prog='PC Builder',
         description='build different pc combinations from a set of components',
         epilog='-l and -L only work when a build is specified',
     )
-    parser.add_argument('-B', '--buildsfile', metavar="buildsfile", default="builds.yml", help="file containing builds");
-    parser.add_argument('-C', '--componentsfile', metavar="componentsfile", default="components.yml", help="file containing parts");
-    parser.add_argument('build', metavar="build", help="use this specific build, use 'all' for all builds");
-    parser.add_argument('-l', '--links', help="open link for build", action="store_true");
-    parser.add_argument('-L', '--show-links', help="show link only for build", action="store_true");
-    parser.add_argument('-w', '--webbrowser', metavar="webbrowser", default="firefox", help="open link for build");
+    parser.add_argument(
+        'build',
+        metavar="build",
+        help="use this specific build, use 'all' for all builds"
+    );
+    parser.add_argument(
+        '-B', '--buildsfile',
+        metavar="buildsfile",
+        default="builds.yml",
+        help="file containing builds"
+    );
+    parser.add_argument(
+        '-C', '--componentsfile',
+        metavar="componentsfile",
+        default="components.yml",
+        help="file containing parts"
+    );
+    parser.add_argument(
+        '-l', '--links',
+        help="open link for build",
+        action="store_true"
+    );
+    parser.add_argument(
+        '-L', '--show-links',
+        help="show link only for build",
+        action="store_true"
+    );
+    parser.add_argument(
+        '-w', '--webbrowser',
+        metavar="webbrowser",
+        default="firefox",
+        help="open link for build"
+    );
 
-    args = parser.parse_args()
-    #pprint(args)
+    return parser.parse_args()
+
+
+def main():
+
+    args = get_args()
 
     parts = yaml.load(open(args.componentsfile).read(), Loader=yaml.Loader)
     builds = yaml.load(open(args.buildsfile).read(), Loader=yaml.Loader)
-    #pprint(parts)
-    #pprint(builds)
+
     if args.build == 'all':
         for name, build in builds.items():
+
             b = Build(name, build, parts)
             b.assemble()
+
             print(f"{b}\n")
+
         if args.links or args.show_links:
             print("link operations (-l and -L) are ignored", file=sys.stderr)
+
     else:
         build_data = builds.get(args.build)
+
         if build_data is None:
             print(f"no such build: {args.build}", file=sys.stderr)
             exit(-2)
+
         b = Build(args.build, build_data, parts)
         b.assemble()
+
         if args.links or args.show_links:
             linklist = ( link for name, amount, price, link in b.partlist )
             if args.links:
