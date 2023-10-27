@@ -66,10 +66,10 @@ def main():
     )
     parser.add_argument('-B', '--buildsfile', metavar="buildsfile", default="builds.yml", help="file containing builds");
     parser.add_argument('-C', '--componentsfile', metavar="componentsfile", default="components.yml", help="file containing parts");
-    parser.add_argument('-b', '--build', metavar="build", help="use this specific buld");
+    parser.add_argument('build', metavar="build", help="use this specific build, use 'all' for all builds");
     parser.add_argument('-l', '--links', help="open link for build", action="store_true");
+    parser.add_argument('-L', '--show-links', help="show link only for build", action="store_true");
     parser.add_argument('-w', '--webbrowser', metavar="webbrowser", default="firefox", help="open link for build");
-    parser.add_argument('-a', '--all-builds', help="show all builds", action="store_true");
 
     args = parser.parse_args()
     pprint(args)
@@ -78,24 +78,28 @@ def main():
     builds = yaml.load(open(args.buildsfile).read(), Loader=yaml.Loader)
     #pprint(parts)
     #pprint(builds)
-    if args.all_builds:
+    if args.build == 'all':
         for name, build in builds.items():
             b = Build(name, build, parts)
             b.assemble()
             print(f"{b}\n")
-    elif args.build is not None:
+    else:
         build_data = builds.get(args.build)
         if build_data is None:
             print(f"no such build: {args.build}")
             exit(-2)
         b = Build(args.build, build_data, parts)
         b.assemble()
-        print(f"{b}\n")
-        if args.links:
-            linklist = ' '.join( f"'{link}'" for name, amount, price, link in b.partlist )
-            os.system(f"{args.webbrowser} {linklist}")
-    else:
-        parser.print_help(sys.stderr)
+        if args.links or args.show_links:
+            linklist = ( link for name, amount, price, link in b.partlist )
+            if args.links:
+                browserlinks = ' '.join( f"'{link}'" for link in linklist)
+                os.system(f"{args.webbrowser} {browserlinks}")
+            elif args.show_links:
+                linklist = '\n'.join(linklist)
+                print(f"{linklist}")
+        else:
+            print(f"{b}")
 
 
 if __name__ == "__main__":
