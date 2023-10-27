@@ -10,6 +10,7 @@
 #  COOLING: 
 #  CASE: 
 
+# original build from hitech
 ORIG:
   CPU: R7
   GPU: RX7800XT
@@ -22,6 +23,7 @@ ORIG:
   COOLING: ASUS_ROG
   CASE: KOLINK_OBS
 
+# a budget build
 BUDGET:
   CPU: R7
   GPU: RX7800XT
@@ -34,19 +36,36 @@ BUDGET:
   COOLING: BQ
   CASE: KOLINK_OBS
 
+# a highend build
 HE:
   CPU: R8X3D
   GPU: RX7900XTX
   MB: ASUS_TFU
   MEM:
-    - CRUCIAL16: 4
+    - GSKILL2x16: 2
   SSD:
     - TG1TB: 2
   PSU: BQ850W
   COOLING: ASUS_ROG
   CASE: FD NB
 
-FAV_A:
+# my favourites
+
+# high end
+FAV_HE:
+  CPU: R8X3D
+  GPU: RX7800XT
+  MB: MSI_MAG
+  MEM:
+    - GSKILL2x16: 1
+  SSD:
+    - TG1TB: 2
+  PSU: BQ850W
+  COOLING: ASUS_ROG
+  CASE: FD NB
+
+# budget
+FAV_BU:
   CPU: R8X3D
   GPU: RX7800XT
   MB: MSI_MAG
@@ -56,21 +75,10 @@ FAV_A:
     - TG1TB: 2
   PSU: BQ850W
   COOLING: BQ
-  CASE: FD NB
-
-FAV_B:
-  CPU: R8X3D
-  GPU: RX7800XT
-  MB: MSI_MAG
-  MEM:
-    - CRUCIAL16: 2
-  SSD:
-    - TG1TB: 2
-  PSU: BQ850W
-  COOLING: ASUS_ROG
   CASE: KOLINK_OBS
 
-FAV_C:
+# what i want _and_ deem justified
+FAV:
   CPU: R8X3D
   GPU: RX7800XT
   MB: MSI_MAG
@@ -79,5 +87,5 @@ FAV_C:
   SSD:
     - TG1TB: 2
   PSU: BQ850W
-  COOLING: ASUS_ROG
+  COOLING: BQ
   CASE: FD NB

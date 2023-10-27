@@ -41,6 +41,10 @@ MEM:
       name: Crucial DIMM 16GB, DDR5-4800, CL40-39-39, on-die ECC
       price: 44.99
       link: https://geizhals.de/crucial-ddr5-dimm-16gb-ct16g48c40u5-a2627503.html
+  - GSKILL2x16:
+      link: https://geizhals.de/g-skill-flare-x5-schwarz-dimm-kit-32gb-f5-6000j3238f16gx2-fx5-a2816010.html
+      price: 118.33
+      name: G.Skill Flare X5 schwarz DIMM Kit 32GB, DDR5-6000, CL32-38-38-96, on-die ECC
 
 SSD:
   - TG1TB:
