@@ -62,7 +62,7 @@ def main():
     parser = argparse.ArgumentParser(
         prog='PC Builder',
         description='build different pc combinations from a set of components',
-        epilog='either --all-builds or --build build is required',
+        epilog='-l and -L only work when a build is specified',
     )
     parser.add_argument('-B', '--buildsfile', metavar="buildsfile", default="builds.yml", help="file containing builds");
     parser.add_argument('-C', '--componentsfile', metavar="componentsfile", default="components.yml", help="file containing parts");
@@ -72,7 +72,7 @@ def main():
     parser.add_argument('-w', '--webbrowser', metavar="webbrowser", default="firefox", help="open link for build");
 
     args = parser.parse_args()
-    pprint(args)
+    #pprint(args)
 
     parts = yaml.load(open(args.componentsfile).read(), Loader=yaml.Loader)
     builds = yaml.load(open(args.buildsfile).read(), Loader=yaml.Loader)
@@ -83,10 +83,12 @@ def main():
             b = Build(name, build, parts)
             b.assemble()
             print(f"{b}\n")
+        if args.links or args.show_links:
+            print("link operations (-l and -L) are ignored", file=sys.stderr)
     else:
         build_data = builds.get(args.build)
         if build_data is None:
-            print(f"no such build: {args.build}")
+            print(f"no such build: {args.build}", file=sys.stderr)
             exit(-2)
         b = Build(args.build, build_data, parts)
         b.assemble()
