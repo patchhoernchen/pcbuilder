@@ -88,12 +88,12 @@ def get_args():
     );
     parser.add_argument(
         '-l', '--links',
-        help="open link for build",
+        help="open links for build",
         action="store_true"
     );
     parser.add_argument(
         '-L', '--show-links',
-        help="show link only for build",
+        help="show links for build",
         action="store_true"
     );
     parser.add_argument(
