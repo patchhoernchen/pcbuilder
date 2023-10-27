@@ -1,6 +1,6 @@
-# PC builder tool
+# PC builder toy
 
-This is just a hacky tool to build a new PC. From a set of components several
+This is just a hacky toy to build a new PC. From a set of components several
 builds can be derived. The costs per build are calculated and show along with
 an overview. Alternativly a link list can be generated or opened.
 
