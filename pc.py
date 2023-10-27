@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 
+
 import yaml
 import os
+import sys
 
 from pprint import pprint, pformat
 
 import argparse
+
 
 class NoSuchPartException(Exception):
     pass
@@ -59,6 +62,7 @@ def main():
     parser = argparse.ArgumentParser(
         prog='PC Builder',
         description='build different pc combinations from a set of components',
+        epilog='either --all-builds or --build build is required',
     )
     parser.add_argument('-B', '--buildsfile', metavar="buildsfile", default="builds.yml", help="file containing builds");
     parser.add_argument('-C', '--componentsfile', metavar="componentsfile", default="components.yml", help="file containing parts");
@@ -69,7 +73,6 @@ def main():
 
     args = parser.parse_args()
     pprint(args)
-
 
     parts = yaml.load(open(args.componentsfile).read(), Loader=yaml.Loader)
     builds = yaml.load(open(args.buildsfile).read(), Loader=yaml.Loader)
@@ -92,7 +95,7 @@ def main():
             linklist = ' '.join( f"'{link}'" for name, amount, price, link in b.partlist )
             os.system(f"{args.webbrowser} {linklist}")
     else:
-        exit(-1)
+        parser.print_help(sys.stderr)
 
 
 if __name__ == "__main__":
